@@ -7,4 +7,8 @@
 <script lang="ts" setup>
 const route = useRoute();
 const slug = route.params.slug;
+
+useHead({
+  title: Array.isArray(slug) ? slug[0] : slug,
+});
 </script>
