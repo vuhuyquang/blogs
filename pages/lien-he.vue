@@ -3,3 +3,9 @@
     Liên hệ
   </div>
 </template>
+
+<script lang="ts" setup>
+useHead({
+  title: 'Liên hệ',
+});
+</script>

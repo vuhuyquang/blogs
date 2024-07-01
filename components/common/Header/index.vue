@@ -1,7 +1,7 @@
 <template>
   <header class="fixed top-0 left-0 w-full bg-white shadow-md flex items-center justify-between px-10 py-2 h-[76px] text-sm z-10">
     <!-- Profile section -->
-    <div class="flex items-center gap-4">
+    <div class="flex items-center gap-4 cursor-pointer">
       <img class="border-solid border-2 border-[#e84118] p-[1px] rounded-full h-[44px] w-[44px]" height="44" width="44"
         src="https://cache.giaohangtietkiem.vn/d/a0181819bd2da9ba11508583a25f3db5.png?width=44" alt="avatar" />
       <div class="grid grid-rows-2 gap-1">
