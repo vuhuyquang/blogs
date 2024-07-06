@@ -48,7 +48,7 @@
               <NuxtLink to="/">TRANG CHỦ</NuxtLink>
             </li>
             <li class="hover:text-[#fdcb6e] transition delay-[45ms]">
-              <NuxtLink to="/bai-viet/new-post">BÀI VIẾT</NuxtLink>
+              <NuxtLink to="/bai-viet/tren-tay-reverb-official-websocket-server-tu-laravel">BÀI VIẾT</NuxtLink>
             </li>
             <li class="hover:text-[#fdcb6e] transition delay-[45ms]">
               <NuxtLink to="/lien-he">LIÊN HỆ</NuxtLink>
