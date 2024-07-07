@@ -32,63 +32,19 @@
         </div>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
-        <div class="flex flex-col cursor-pointer gap-3 p-4 border-2 border-gray-100 rounded-3xl">
+        <div v-for="post in item.data.data" :key="post.id" class="flex flex-col cursor-pointer gap-3 p-4 border-2 border-gray-100 rounded-3xl">
           <div class="h-auto max-h-56 overflow-hidden rounded-2xl">
             <img class="h-full w-full zoom-on-hover rounded-2xl" src="https://wallpaperaccess.com/full/14736.jpg"
               alt="image">
           </div>
           <div class="px-1 flex flex-col gap-3">
             <div
-              class="text-sm lg:text-base xl:text-lg font-bold text-[#475467] hover:text-[#000000cc] transition delay-[45ms]">
-              Trên tay Reverb, official WebSocket server từ Laravel</div>
-            <div class="text-[10px] lg:text-[12px] xl:text-[14px] text-[#475467]">
-              Cách đây không lâu, phiên bản Laravel 11 đã chính thức ra mắt. Đi với đó là Reverb, package sẽ mang đến
-              giao tiếp...
-            </div>
+              class="text-sm lg:text-base xl:text-lg font-bold text-[#475467] hover:text-[#000000cc] transition delay-[45ms]">{{ post.title }}</div>
+            <div class="text-[10px] lg:text-[12px] xl:text-[14px] text-[#475467]">{{ post.short_content }}</div>
             <div class="flex justify-start gap-5 text-[#979797] items-center text-[7px] lg:text-[8px] xl:text-[10px]">
               <span class="rounded-full bg-[#f2f2f2] px-2 py-1 flex justify-between items-center">Công nghệ</span>
-              <span>10 tháng trước</span>
-              <span>3 phút đọc</span>
-            </div>
-          </div>
-        </div>
-        <div class="flex flex-col cursor-pointer gap-3 p-4 border-2 border-gray-100 rounded-3xl">
-          <div class="h-auto max-h-56 overflow-hidden rounded-2xl">
-            <img class="h-full w-full zoom-on-hover rounded-2xl" src="https://wallpaperaccess.com/full/14736.jpg"
-              alt="image">
-          </div>
-          <div class="px-1 flex flex-col gap-3">
-            <div
-              class="text-sm lg:text-base xl:text-lg font-bold text-[#475467] hover:text-[#000000cc] transition delay-[45ms]">
-              Trên tay Reverb, official WebSocket server từ Laravel</div>
-            <div class="text-[10px] lg:text-[12px] xl:text-[14px] text-[#475467]">
-              Cách đây không lâu, phiên bản Laravel 11 đã chính thức ra mắt. Đi với đó là Reverb, package sẽ mang đến
-              giao tiếp...
-            </div>
-            <div class="flex justify-start gap-5 text-[#979797] items-center text-[7px] lg:text-[8px] xl:text-[10px]">
-              <span class="rounded-full bg-[#f2f2f2] px-2 py-1 flex justify-between items-center">Công nghệ</span>
-              <span>10 tháng trước</span>
-              <span>3 phút đọc</span>
-            </div>
-          </div>
-        </div>
-        <div class="flex flex-col cursor-pointer gap-3 p-4 border-2 border-gray-100 rounded-3xl">
-          <div class="h-auto max-h-56 overflow-hidden rounded-2xl">
-            <img class="h-full w-full zoom-on-hover rounded-2xl" src="https://wallpaperaccess.com/full/14736.jpg"
-              alt="image">
-          </div>
-          <div class="px-1 flex flex-col gap-3">
-            <div
-              class="text-sm lg:text-base xl:text-lg font-bold text-[#475467] hover:text-[#000000cc] transition delay-[45ms]">
-              Trên tay Reverb, official WebSocket server từ Laravel</div>
-            <div class="text-[10px] lg:text-[12px] xl:text-[14px] text-[#475467]">
-              Cách đây không lâu, phiên bản Laravel 11 đã chính thức ra mắt. Đi với đó là Reverb, package sẽ mang đến
-              giao tiếp...
-            </div>
-            <div class="flex justify-start gap-5 text-[#979797] items-center text-[7px] lg:text-[8px] xl:text-[10px]">
-              <span class="rounded-full bg-[#f2f2f2] px-2 py-1 flex justify-between items-center">Công nghệ</span>
-              <span>10 tháng trước</span>
-              <span>3 phút đọc</span>
+              <span>{{ post.created_at }}</span>
+              <span>{{ post.reading_time }} phút đọc</span>
             </div>
           </div>
         </div>
@@ -103,9 +59,5 @@
 
 <script lang="ts" setup>
 const route = useRoute();
-const slug = route.params.slug;
-
-useHead({
-  title: Array.isArray(slug) ? slug[0] : slug,
-});
+const item = await getListPost(1, 20, null);
 </script>

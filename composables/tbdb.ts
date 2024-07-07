@@ -2,7 +2,7 @@ import { LRUCache } from "lru-cache"
 import type { HTTPMethod } from "~/types";
 import { hash as ohash } from 'ohash'
 
-const apiBaseUrl = 'http://localhost:3001'
+const apiBaseUrl = 'http://127.0.0.1:8000'
 
 const promiseCache = new LRUCache<string, any>({
   max: 500,
@@ -41,3 +41,11 @@ export function fetchTBDB(url: string, params: any, method: HTTPMethod = 'GET', 
   
   return promiseCache.get(hash);
 }
+
+export async function getListPost(page: number, size: number, search: null | string): Promise<any> {
+  return fetchTBDB('blog', {
+    page: page,
+    size: size,
+    search: search,
+  }, 'GET');
+};
