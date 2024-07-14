@@ -3,7 +3,7 @@
     <!-- Profile section -->
     <div class="flex items-center gap-4 cursor-pointer">
       <img class="border-solid border-2 border-[#e84118] p-[1px] rounded-full h-[44px] w-[44px]" height="44" width="44"
-        src="https://cache.giaohangtietkiem.vn/d/a0181819bd2da9ba11508583a25f3db5.png?width=44" alt="avatar" />
+        src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" alt="avatar" />
       <div class="grid grid-rows-2 gap-1">
         <span class="font-bold">Quang Vu Huy</span>
         <div class="flex items-center gap-1">
